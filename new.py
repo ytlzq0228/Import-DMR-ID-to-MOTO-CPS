@@ -206,7 +206,7 @@ def main():
 		if int(i)>Max_ID:
 			Max_ID=int(i)
 
-	user_list= open("name_list.txt", "r").read().replace(" ","").split("\n")
+	user_list= open("name_list.csv", "r").read().replace(" ","").split("\n")
 	Add_CallSign_str=create_add_CallSign(user_list,Max_ID)
 	new_xml_str=etree.tostring(xml, pretty_print=True).decode()
 	new_xml_str=new_xml_str.replace("</DIGITAL_UCL_DLT_TYPE>",Add_CallSign_str+"\n      </DIGITAL_UCL_DLT_TYPE>").encode()
